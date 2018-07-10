@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ</title>
+</head>
+<body>
+	<p>はろー</p>
+	<ul id="main">
+		<li>0</li>
+		<li class="item">1</li>
+		<li class="item">2</li>
+		<li>
+			3
+			<ul id="sub">
+				<li>3-1</li>
+				<li class="item">3-2</li>
+				<li class="item">3-3</li>
+				<li>3-4</li>
+			</ul>
+		</li>
+	</ul>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			//セレクタ：処理対象となるDOM要素を指定する記法
+			//メソッド：処理
+			//メソッド：処理を連続して書くこと
+			$("p").css('color','red').hide('slow');
+			//$("#sub").css('color','red'); //idをセレクタで指定する場合は#
+			$(".item").css('color','red');  //クラスをセレクタで指定する場合は.
+		});
+	</script>
+</body>
+</html>
