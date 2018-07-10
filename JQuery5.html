@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ5</title>
+	<style>
+		.mystyle{
+			border:5px solid green;
+			font-size 48;
+		}
+	</style>
+</head>
+<body>
+	<p>はろー</p>
+	//<p><a href = "http://google.com">Google</a></p>
+	<p//><a href = "http://yahoo.co.jp">Yahoo!</a></p>
+	<p><//a href = "http://dotinstall.com">dotinstall</a></p>
+
+	<ul id="main">
+		<li>0</li>
+		<li class="item">1</li>
+		<li class="item">2</li>
+		<li>
+			3
+			<ul id="sub">
+				<li>3-1</li>
+				<li class="item">3-2</li>
+				<li class="item">3-3</li>
+				<li>3-4</li>
+			</ul>
+		</li>
+	</ul>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			//css
+			$('p').addClass('mystyle');
+			console.log($('p').css('color'));	
+		});
+	</script>
+</body>
+</html>
