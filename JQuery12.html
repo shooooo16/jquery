@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ12</title>
+</head>
+
+
+
+<body>
+	<p>JQueryの練習12</p>
+	<button>ADD！</button>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			var classCount;
+			var num=0;
+			$('button').click(function(){
+					classCount = $(".vanish").length; //クラスの個数を数える(今回はカウントを使用のため使ってはいない)
+					
+					var p= $('<p>').text('追加しました').addClass('vanish');
+					var q= $('<p>').text('追加しました'+ num).addClass('vanish');
+										
+					if (num<=0){
+						$(this).before(p);
+					
+					}else{
+						$(this).before(q);
+					}
+					num++;
+				});
+				
+			$('body').on('click','.vanish',function(){
+					$(this).remove();
+			});
+			
+		});
+	</script>
+</body>
+</html>
