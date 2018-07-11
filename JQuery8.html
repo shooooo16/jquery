@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ6</title>
+	<style>
+		.mystyle{
+			border:5px solid green;
+			font-size 48;
+		}
+	</style>
+</head>
+
+
+
+<body>
+	<p>JQueryの練習</p>
+	<ul>
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			//before, after →その要素の前or後ろに追加する
+			//prepend,append→その要素の先頭に追加するor末尾に追加する
+			
+			var li = $('<li>').text('追加1');
+			$('ul > li:eq(1)').before(li);
+			var li = $('<li>').text('追加2');
+			li.insertBefore($('ul > li:eq(3)'));
+			
+			var li = $('<li>').text('追加3');
+			$('ul').prepend(li);
+			var li = $('<li>').text('追加5');
+			li.prependTo($('ul'));
+			
+			var li = $('<li>').text('追加4');
+			$('ul').append(li);
+			var li = $('<li>').text('追加6');
+			li.appendTo($('ul'));
+		});
+	</script>
+</body>
+</html>
