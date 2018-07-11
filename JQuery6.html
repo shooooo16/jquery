@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ6</title>
+	<style>
+		.mystyle{
+			border:5px solid green;
+			font-size 48;
+		}
+	</style>
+</head>
+<body>
+	<p>JQueryの練習</p>
+	<a href = "http://google.com" data-sitename="google">Google</a>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+		
+			// attr→htmlの属性の値を取得したり変更したりできるもの
+				//$('a').attr('href','http://google.co.jp');
+				//console.log($('a').attr('href'));
+			
+			//data→htmlの属性にはないが何らかのカスタム属性をつけておきたい時に使用
+				console.log($('a').data('sitename'));
+		});
+	</script>
+</body>
+</html>
