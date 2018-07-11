@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ6</title>
+	<style>
+		.mystyle{
+			border:5px solid green;
+			font-size 48;
+		}
+	</style>
+</head>
+<body>
+	<p>JQueryの練習</p>
+	<a href = "http://google.com" data-sitename="google">Google</a>
+	<input type="text" value="hello"> 
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			//text
+			//html
+			//val
+			//remove, empty→removeは要素ごと削除、emptyは値を空にする
+				console.log($('input').val());
+				$('p').empty();
+				$('input').val('hello,again');
+		});
+	</script>
+</body>
+</html>
