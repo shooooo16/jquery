@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ10</title>
+</head>
+
+
+
+<body>
+	<p>JQueryの練習10</p>
+	<div id="box1" style="width:100px; height:100px;background:red;"></div>
+	<div id="box2" style="width:100px; height:100px;background:green;"></div>
+	<div id="box3" style="width:100px; height:100px;background:blue;"></div>
+	<div id="box4" style="width:100px; height:100px;background:yellow;"></div>
+	<div id="box5" style="width:100px; height:100px;background:pink;"></div>
+	
+	X座標：<input type="text" id="txtX" />
+	Y座標：<input type="text" id="txtY" />
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+				//click
+				//mouseover,mousemove
+				
+				$('#box1').click(function(){
+					alert("hello");
+				});
+				
+				$('#box2').mouseover(function(){
+					$(this).css('background','black');
+				});
+				
+				$('#box2').mouseout(function(){
+					$(this).css('background','green');
+				});
+				
+				$('#body').mousemove(function(e){
+					$(this).text(e.pageX);
+				});
+				
+				 //マウス移動時のイベントをBODYタグに登録する
+				  document.body.addEventListener("mousemove", function(e){
+				 
+				    //座標を取得する
+				    var mX = e.pageX;  //X座標
+				    var mY = e.pageY;  //Y座標
+				 
+				    //座標を表示する
+				    document.getElementById("txtX").value = mX;
+				    document.getElementById("txtY").value = mY;
+				   });
+				});
+		
+		
+	</script>
+</body>
+</html>
