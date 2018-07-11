@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ14</title>
+</head>
+
+
+
+<body>
+	<p>JQueryの練習14(ajax)</p>
+	<p>
+		<input type="text" name="name" id="name">
+		<input type="button" id="greet" value="Greet!">
+	</p>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			// Ajax
+			// Asynchronous JavaScript + XML
+			// サーバーと通信 + ページの書き換え
+			
+			$('#greet').click(function(){
+				
+				$.get('greet.php',{
+					name: $('#name').val() //nameに記入された値を取得
+				},function(data){
+					$('#result').html(data.message + '(' + data.length + ')' );
+				
+				});
+			});
+		});
+	</script>
+</body>
+</html>
