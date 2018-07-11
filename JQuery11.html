@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ11</title>
+</head>
+
+
+
+<body>
+	<p>JQueryの練習11</p>
+	<input type="text" id="name">
+	<select id="members" name="members">
+		<option>柴崎</option>
+		<option>大迫</option>
+		<option>香川</option>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			// focus,blur
+			// change
+			
+			$('#name')
+				.focus(function(){
+					$(this).css('background','yellow');
+				})
+				.blur(function(){
+					$(this).css('background','white');
+				});
+			//$('#members').change(function{});
+			
+			
+			$('#members').change(function() {
+				// 選択されているvalue属性値を取り出す
+				var val = $("#members option:selected").text();
+				$('#name').val(val);
+				});
+		});
+	</script>
+</body>
+</html>
