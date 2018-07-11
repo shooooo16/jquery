@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charaset="utf-8">
+	<title>JQueryの練習ですよ13</title>
+</head>
+
+
+
+<body>
+	<p>JQueryの練習13(ajax)</p>
+	<button>もっと読む！</button>
+	<div id="result"></div>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			// Ajax
+			// Asynchronous JavaScript + XML
+			// サーバーと通信 + ページの書き換え
+			
+			$('button').click(function(){
+				$('#result').load('more.html' , function(){
+					
+					$('message').css('color','red');
+				}); //loadの部分がajaxの技術
+					//関数の部分はコールバック関数と言って、Ajax処理が終わった後に走る関数。通常のように書くとAjax処理が終わる前に処理が走り無効になるので注意
+			});
+		});
+	</script>
+</body>
+</html>
