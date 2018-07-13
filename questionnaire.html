@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charaset="utf-8">
+<title>アンケートフォーム</title>
+</head>
+<body>
+<form action="mailto:hoge@hoge.co.jp" method="post" enctype="text/plain">
+<table>
+  <tr>
+    <td colspan="2">
+      <strong>アンケートフォーム</strong>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>生年月日：</strong>
+    </td>
+    <td>
+    <input type="text" name="生年月日" maxlength="5">
+    </td>
+    <td>
+      <strong>お名前：</strong>
+    </td>
+    <td>
+    <input type="text" name="お名前" maxlength="5">
+    </td>
+  </tr>
+  <tr>
+	<td>
+      <strong>性別：</strong>
+    </td>
+    <td>
+    <input type="radio" name="性別" value="男">男 
+    <input type="radio" name="性別" value="女">女 
+    </td>
+    <td>
+      <strong>メールアドレス：</strong>
+    </td>
+    <td>
+    <input type="text" name="メールアドレス" maxlength="30" pattern="^[0-9A-Za-z]+$" title="半角英字８文字で入力して下さい。">
+    </td>
+    
+  </tr>
+  <tr>
+    <td >
+      <strong>お住まいの都道府県：</strong>
+    </td>
+    <td>
+    <input type="text" name="都道府県" maxlength="5">
+    </td>
+    <td >
+      <strong>電話番号：</strong>
+    </td>
+    <td>
+    <input type="text" name="電話番号" maxlength="5" >
+    </td>
+  </tr>
+  <tr>
+    <td >
+      <strong>好きな代表選手：</strong>
+    </td>
+    <td>
+      <select name="パソコンのＯＳ">
+        <option selected></option>
+        <option>柴崎 岳</option>
+        <option>大迫 勇也</option>
+        <option>香川 真司</option>
+        <option>本田 圭佑</option>
+        <option>メッシ</option>
+        <option>モドリッチ</option>
+        <option>ルカク</option>
+        <option>ロ・チェルソ</option>
+      </select>
+    </td>
+    <td >
+      <strong>観戦歴：</strong>
+    </td>
+    <td>
+    <input type="checkbox" name="パソコン歴" value="一年未満">一年未満
+    <br>
+    <input type="checkbox" name="パソコン歴" value="一年以上">一年以上 
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <strong>メッセージ：</strong>
+    <br>
+     <textarea name="メッセージ" rows="5" cols="75" >何かお書きください(10字以内)</textarea>
+     <basefont>文字数</basefont>
+     <span class="count">0</span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+    <input type="button" id="submit" value="送信する">
+    </td>
+    <td colspan="2">
+    <input type="reset"  id="reset" value="やり直し" >
+    </td>
+  </tr>
+</table>
+</form>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('textarea').bind('keydown keyup keypress change',function(){
+        var thisValueLength = $(this).val().length;
+        $('.count').html(thisValueLength);
+    });
+    
+    $('#reset').click(function(){
+    	if(!confirm('本当に削除しますか？')){
+    	    /* キャンセルの時の処理 */
+    	    return false;
+    	}else{
+    	}
+    })
+    
+    $('#submit').click(function(){
+    	var textLength = $('textarea').val().length;
+    	if(textLength >= 11){
+            alert("メッセージは10文字以内でお書きください");
+        }else{
+            location.reload();
+        }
+    });
+});
+</script>
+
+</body>
+</html>
