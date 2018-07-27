@@ -31,16 +31,16 @@
       <strong>性別：</strong>
     </td>
     <td>
-    <input type="radio" name="性別" value="男">男 
-    <input type="radio" name="性別" value="女">女 
+    <input type="radio" name="性別" value="男">男
+    <input type="radio" name="性別" value="女">女
     </td>
     <td>
       <strong>メールアドレス：</strong>
     </td>
     <td>
-    <input type="text" name="メールアドレス" maxlength="30" pattern="^[0-9A-Za-z]+$" title="半角英字８文字で入力して下さい。">
+    <input type="text" id="mail"  name="メールアドレス" maxlength="5"  title="半角英字８文字で入力して下さい。">
     </td>
-    
+
   </tr>
   <tr>
     <td >
@@ -53,7 +53,7 @@
       <strong>電話番号：</strong>
     </td>
     <td>
-    <input type="text" name="電話番号" maxlength="5" >
+    <input type="number" name="電話番号" maxlength="5" >
     </td>
   </tr>
   <tr>
@@ -79,7 +79,7 @@
     <td>
     <input type="checkbox" name="パソコン歴" value="一年未満">一年未満
     <br>
-    <input type="checkbox" name="パソコン歴" value="一年以上">一年以上 
+    <input type="checkbox" name="パソコン歴" value="一年以上">一年以上
     </td>
   </tr>
   <tr>
@@ -110,7 +110,7 @@ $(function(){
         var thisValueLength = $(this).val().length;
         $('.count').html(thisValueLength);
     });
-    
+
     $('#reset').click(function(){
     	if(!confirm('本当に削除しますか？')){
     	    /* キャンセルの時の処理 */
@@ -118,13 +118,22 @@ $(function(){
     	}else{
     	}
     })
-    
+
     $('#submit').click(function(){
     	var textLength = $('textarea').val().length;
+      var mailvalue = $('#mail').val();
+
     	if(textLength >= 11){
             alert("メッセージは10文字以内でお書きください");
         }else{
             location.reload();
+        }
+
+        if (mailvalue.match(/^[\u3040-\u30ff]+$/)) {
+            alert("メールアドレスは半角英数字で入力してください");
+            $('#mail').css('background-color','#FFCCCC');
+        }else if(mailvalue.match(/[！!"#$%&'()\*\+\-\.,\/:;<=>?@\[\\\]^_`{|}~]/)){
+            alert("メールアドレスに記号は入力しないでください");
         }
     });
 });
